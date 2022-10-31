@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AutController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\AuthorController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +30,10 @@ Route::get('/me', [AutController::class, 'me']);
 //Route::put('/books/{id}', [BookController::class, 'update']);
 //Route::delete('/books/{id}', [BookController::class, 'dastroy']);
 
-Route::resource('books', BookController::class)->except(
+//Route::resource('books', BookController::class)->except(
+    //['create', 'edit']
+//);
+
+Route::resource('authors', AuthorController::class)->except(
     ['create', 'edit']
 );
